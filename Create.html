@@ -42,15 +42,15 @@
       <p class="or"><span>or</span></p>
 
       <div class="email-login">
-        <form method="POST" action="https://sheetdb.io/api/v1/bf0nrwn7bf210" id="sheetdb-form" class="sheetdb-form">
+        <form method="POST" action="https://sheetdb.io/api/v1/0g3c6zo9gmc79" id="sheetdb-form" class="sheetdb-form">
         <lable for="username">Username</lable>
         <input type="text" placeholder="Enter Username" name="data[Username]" id="user" required minlength="5" maxlength="15">
          <label for="email">Email</label>
-         <input type="email" placeholder="Enter Email" name="data[Email]" id = "email"onfocusout="fun()" >
+         <input type="email" placeholder="Enter Email" name="data[Email]" id = "email" >
          <label for="Password">Password</label>
-         <input type="password" placeholder="Enter Password" id="pass"name="data[Password]" required minlength="8" maxlength="16">
+         <input type="password" placeholder="Enter Password" oninput="fun()" id="pass"name="data[Password]" required minlength="8" maxlength="16">
       </div>
-      <button class="btn btn-primary" style="width:100%;  height:50px;">Create Account</button>
+      <button class="btn btn-primary"  style="width:100%;  height:50px;">Create Account</button>
       <br>
      <p>By creating an account you agree to our<a href="#"> Terms and conditions</a></p>
    </form>
@@ -60,20 +60,23 @@
  function fun(){
     e = document.getElementById("email")
     u = document.getElementById("user")
-
-     axios.get('https://sheetdb.io/api/v1/bf0nrwn7bf210').then(response=>{
+    p = document.getElementById("pass")
+     axios.get('https://sheetdb.io/api/v1/0g3c6zo9gmc79').then(response=>{
     console.warn("Response Status :"+ response.status)
     let a = response.data
+    console.log(a)
       for(let i = 0 ; i<= a.length ; i++){
         if(e.value === a[i].Email){
           console.warn("email exists")
           Swal.fire(
             "Error",
-            "email alredy exists!!",
-            "error"
+            "User alredy exists!!",
+            "info"
           )
           u.value = null
           e.value = null
+          p.value = null
+
         }
       }
   })
@@ -93,17 +96,18 @@
         }
     };
     console.log(data.data.Email)
-    axios.post('https://sheetdb.io/api/v1/bf0nrwn7bf210', data)
+    axios.post('https://sheetdb.io/api/v1/0g3c6zo9gmc79', data)
         .then(function (response) {
-          console.log(response)
-     
-
             if (response.status === 201) {
                 Swal.fire(
-                    'Success',
-                    'Your account has been created',
-                    'success'
-                );
+              "Account created!",
+              `Welcome ${data.data.Username}!`,
+              "success"
+            ).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "index.html"
+              }
+            })
             }
         })
         .catch(function (error) {
@@ -140,10 +144,9 @@
       swal.fire('This is a dummy site you dummy')
     }
   
-  axios.get('https://sheetdb.io/api/v1/bf0nrwn7bf210').then(response=>{
+  axios.get('https://sheetdb.io/api/v1/0g3c6zo9gmc79').then(response=>{
     console.warn("Response Status :"+ response.status)
     let a = response.data
-    console.table(a)
   })
 </script>
 </body>
