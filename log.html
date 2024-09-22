@@ -44,7 +44,7 @@
 
   <script>
 
-    let fun = (evt) => {
+    let fun = () => {
       e = document.getElementById("email")
       p = document.getElementById("pass")
       axios.get('https://sheetdb.io/api/v1/0g3c6zo9gmc79').then(response => {
@@ -58,13 +58,12 @@
             Swal.fire(
               "Logged in!",
               `Welcome ${dat[i].Username}!`,
-              "Success"
+              "success"
             ).then((result) => {
               if (result.isConfirmed) {
                 window.location.href = "index.html"
               }
             })
-
           }else if(p.value != dat[i].Password && e.value === dat[i].Email){
             Swal.fire(
               'Oops..!',
@@ -73,9 +72,10 @@
             )
             p.value = null
           }
-          else {
+          else if(e.value != dat[i].Email) {
             Swal.fire({
               title: "User not found!",
+              icon:"info",
               text:"Don't have an account? create one!",
               confirmButtonText: "Sign-In",
             }).then((result) => {
