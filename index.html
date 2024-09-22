@@ -104,7 +104,7 @@
 <br>
 <br>
   <h2 class="Title">Hackcom project title</h2>
-  <p>text</p>
+  <p id="usershow"></p>
   <br>
   
   <div class="main">
@@ -586,6 +586,10 @@
 <script>
   let fun = () =>{
     window.location.href = "create.html"
+  }
+  const username =  localStorage.getItem("username")
+  if(username){
+    document.getElementById("usershow").textContent = `Welcome ${username}`
   }
 </script>
   

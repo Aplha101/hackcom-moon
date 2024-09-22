@@ -44,7 +44,7 @@
 
   <script>
 
-    let fun = () => {
+    let fun = (evt) => {
       e = document.getElementById("email")
       p = document.getElementById("pass")
       axios.get('https://sheetdb.io/api/v1/0g3c6zo9gmc79').then(response => {
@@ -53,6 +53,8 @@
         dat = response.data
         for (let i = 0; i <= dat.length; i++) {
           if (e.value === dat[i].Email && p.value === dat[i].Password) {
+            localStorage.setItem("username" , dat[i].Username)
+            localStorage.setItem("useremail" , dat[i].Email)
             Swal.fire(
               "Logged in!",
               `Welcome ${dat[i].Username}!`,
