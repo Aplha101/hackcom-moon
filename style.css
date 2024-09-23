@@ -150,3 +150,13 @@ a{
   display: table;
   clear: both;
 }
+li a {
+  z-index: 100;
+}
+
+.global{
+  z-index: 100;
+}
+.Follow{
+  z-index: 10;
+}

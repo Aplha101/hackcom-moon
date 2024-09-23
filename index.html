@@ -57,6 +57,7 @@
   </div>
 </nav>
  
+
   
   
 <br>
@@ -73,7 +74,7 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Stream_of_light%2C_stream_of_water.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Get the best bots</h5>
-        <p>Get the best bots to boost up your servers from <a href="Bots.html">here</a></p>
+        <p>Get the best bots to boost up your servers from <a href="about.html">here</a></p>
       </div>
     </div>
     <div class="carousel-item">
@@ -399,8 +400,8 @@
               <h6>About</h6>
               <ul>
                 <li><a href="#">Our Story</a> </li>
+                <li><a href="about.html">Team</a></li>
                 <li><a href="#">Benefits</a> </li>
-                <li><a href="">Team</a> </li>
                 <li><a href="#">Careers</a> </li>
               </ul>
           </div>
@@ -432,14 +433,13 @@
 </div>
 
 </ul>
-        <p class="copyright"> © Copyright All rights reserved by team CF-12</p>
-        
-       
+
     </div>
       </div>
     </div>
 
 <script>
+
   let logged = false
   let loggedin = () => {
     if(!logged){
@@ -455,7 +455,7 @@
             })
     }
   }
-  const username =  localStorage.getItem("username")
+  const username = localStorage.getItem("username")
   if(username){
     document.getElementById("usershow").textContent = `Welcome ${username}`
     logged = true
