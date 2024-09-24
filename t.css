@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+.card-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.paypal {
+    background: #003087; /* PayPal blue */
+}
+
+.visa {
+    background: #1a1f71; /* Visa blue */
+}
+
+.mastercard {
+    background: #ff5f00; /* MasterCard orange */
+}
+
+.logo {
+    position: relative;
+    z-index: 1;
+}
+
+.mastercard::before,
+.mastercard::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.mastercard::before {
+    background: #ff3d00; /* MasterCard red */
+    left: 0;
+}
+
+.mastercard::after {
+    background: #f79e1b; /* MasterCard yellow */
+    right: 0;
+}
+.img{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    content: icon;
+    position: absolute;
+}
+.visa::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 30%;
+    background: #1a1f71;
+    border-radius: 5px;
+}
+
+.paypal::before {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    background: #003087; /* White area in PayPal */
+    top: 10%;
+    left: 10%;
+    border-radius: 5px;
+}
+
+.wrap .img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-image: url(Capture.PNG); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 1;
+    backdrop-filter: blur(10px);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 25px;
+    background-image: url(Capture.PNG);
+    /* filter: blur(10px); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container form {
+    width: 700px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.container form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.container form .row .col {
+    flex: 1 1 250px;
+}
+
+.col .title {
+    font-size: 20px;
+    color: rgb(237, 55, 23);
+    padding-bottom: 5px;
+}
+
+.col .inputBox {
+    margin: 15px 0;
+}
+
+.col .inputBox label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.col .inputBox input,
+.col .inputBox select {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 15px;
+}
+
+.col .inputBox input:focus,
+.col .inputBox select:focus {
+    border: 1px solid #000;
+}
+
+.col .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.col .flex .inputBox {
+    flex: 1 1;
+    margin-top: 5px;
+}
+
+.col .inputBox img {
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit_btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background: rgb(1, 143, 34);
+    color: #fff;
+    margin-top: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.container form .submit_btn:hover {
+    background: #3d17fb;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    display: none;
+}

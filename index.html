@@ -43,10 +43,15 @@
             video.addEventListener('ended', () => {
                 // Add transition effect
                 document.body.classList.add('transition');
-                
-                // After the transition effect is applied, redirect to another page
                 setTimeout(() => {
-                    window.location.href = 'log.html'; 
+                    l = localStorage.getItem("logged")
+                    console.log(l)
+                    if(l){
+                        window.location.href = 'homepage.html'; 
+                    }else{
+                        window.location.href = "log.html"
+                    }
+                    
                 }, 1000); 
             });
         });

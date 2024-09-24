@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- The document type declaration defines the document to be HTML5 -->
+<html lang="en">
+  <!-- The language attribute specifies the language of the document -->
+  <head>
+    <!-- The head element contains meta-information about the document -->
+    <meta charset="UTF-8" />
+    <!-- The charset attribute specifies the character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The viewport meta tag ensures the website is responsive on all devices -->
+    <title>Document</title>
+    <!-- The title element specifies the title of the document, shown in the browser's title bar or tab -->
+    <link
+      rel="shortcut icon"
+      href="https://sidcupfamilygolf.com/wp-content/themes/puttosaurus/favicons/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <!-- The link element with rel="shortcut icon" specifies the icon for the webpage -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+     
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+  crossorigin="anonymous"></script>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- The link element with rel="stylesheet" specifies an external CSS file for styling -->
+    <link rel="stylesheet" href="homepage.css" />
+    <!-- This link element includes a local CSS file for additional styling -->
+  </head>
+
+  <body>
+    <!-- The body element contains the content of the HTML document -->
+    <div id="nav">
+      <!-- The div element with id="nav" represents the navigation bar -->
+      <img
+        src="https:/ /eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg"
+        alt="logo"
+      />
+      <!-- The img element displays an image, with the src attribute specifying the image URL -->
+      <!-- The h4 element represents a heading -->
+      <a href="stock.html"><h4>Stocks</h4></a>
+      <a href="t.html"><h4>TRANSACTION</h4></a>
+      <h4>UPDATES</h4>
+      <a href="about.html"><h4>TEAMS</h4></a>    
+      
+      <button class="btn btn-danger" onclick="out(logged)" style="height:50px;">Log-out</button>  
+    </div>
+    <div id="cursor"></div>
+    <!-- The div element with id="cursor" represents a custom cursor -->
+    <div id="cursor-blur"></div>
+    <!-- The div element with id="cursor-blur" represents a blurred cursor effect -->
+
+    <video
+      autoplay
+      loop
+      muted
+      src="trade.mp4"
+    ></video>
+    <!-- The video element embeds a video, with autoplay, loop, and muted attributes -->
+  
+    <div id="main">
+      <!-- The div element with id="main" contains the main content of the page -->
+      <div id="page1">
+        <!-- The div element with id="page1" represents the first page section -->
+        <h1>BUY. WAIT. SELL.</h1>
+        <!-- The h1 element represents the main heading -->
+        <h2 id="usershow"></h2>
+        <!-- The h2 element represents a subheading -->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic omnis qui eveniet, accusamus quas mollitia? Perspiciatis atque expedita commodi ratione, incidunt cumque blanditiis?
+        </p>
+        <!-- The p element represents a paragraph of text -->
+        <div id="arrow">
+          <i class="ri-arrow-down-line"></i>
+          <!-- The i element with a class represents an icon -->
+        </div>
+      </div>
+      <div id="page2">
+        <!-- The div element with id="page2" represents the second page section -->
+        <div id="scroller">
+          <!-- The div element with id="scroller" represents a scrolling container -->
+          <div id="scroller-in">
+            <a href="stock.html"></a><h4>STOCKS</h4>
+            <a href="t.html"><h4>TRANSACTION</h4></a>
+            <a href="graph.html"><h4>UPDATES</h4></a>
+            
+          </div>
+          <div id="scroller-in">
+            <a href="stock.html"></a><h4>STOCKS</h4>
+            <a href="t.html"><h4>TRANSACTION</h4></a>
+            <a href="graph.html"><h4>UPDATES</h4></a>
+          </div>
+        </div>
+        <div id="about-us">
+          <!-- The div element with id="about-us" represents the about us section -->
+          <img
+            src="https://eiwgew2 7fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+            alt="img"
+          />
+          <div id="about-us-in">
+            <h3>ABOUT US</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, perferendis hic esse doloremque incidunt nesciunt est sed praesentium aperiam quaerat! Dignissimos eveniet recusandae omnis? Neque similique sunt expedita, earum quasi optio iusto sapiente eligendi commodi iure non, aliquam, odit modi nemo!
+            </p>
+          </div>
+          <img
+            src="https://eiwgew27fhz .exactdn.com/wp-content/uploads/2023/02/home-about-2-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+            alt="img"
+          />
+        </div>
+        
+        <div id="green-div">
+          <img
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
+            alt=""
+          />
+          <h4>
+            SIGN UP FOR OUR NEWS AND SPECIAL OFFERS STRAIGHT TO YOUR INBOX
+          </h4>
+          <img
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div id="page3">
+        <!-- The div element with id="page3" represents the third page section -->
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eligendi vel delectus cumque. Optio ducimus, pariatur incidunt aliquam beatae tenetur consequatur, qui necessitatibus ab odit sunt aspernatur ratione, iusto quaerat modi! Assumenda magnam tempore repudiandae ratione exercitationem, maiores qui voluptates ipsa, consequatur iusto neque vero.
+        </p>
+        <img
+          id="colon1"
+          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
+          alt=""
+        />
+        <img
+          id="colon2"
+          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
+          alt=""
+        />
+      </div>
+      <div id="page4">
+        <!-- The div element with id="page4" represents the fourth page section -->
+        <h1>WHAT ARE YOU WAITING FOR?</h1>
+        <div class="elem">
+          <h2>UPDATES</h2>
+          <img
+            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-toptracer-1024x683.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+            alt=""
+          />
+        </div>
+        <div class="elem">
+          <h2>TRANSACTION</h2>
+          <img
+            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-lessons-1024x683.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+            alt=""
+          />
+        </div>
+        <div class="elem">
+          <H2>STOCKS</H2>
+          <img
+            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-ag-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+            alt=""
+          />
+        </div>
+      </div>
+      <div id="footer">
+        <!-- The div element with id="footer" represents the footer section -->
+        <img
+          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg"
+          alt=""
+        />
+        <div id="f1">
+          <img
+            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/log  o-white.svg"
+            alt="img"
+          />
+        </div>
+        <div id="f2">
+          <h3>STOCKS</h3>
+          <h3>TRADE</h3>
+          <h3>BUY & SELL</h3>
+        </div>
+        <div id="f3">
+          <h3>CONTACT US</h3>
+          <h3>TEAMS</h3>
+        </div>
+        <
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+      integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- The script element includes an external JavaScript file for GSAP library -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
+      integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- The script element includes an external JavaScript file for GSAP ScrollTrigger plugin -->
+    <script src="homepage.js"></script>
+    <script>
+    let logged = false
+  let loggedin = () => {
+    if(!logged){
+      Swal.fire({
+              title: "Uh-oh!",
+              icon:"info",
+              text:"You're not logged in!",
+              confirmButtonText: "Log-In",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "log.html"
+              }
+            })
+    }
+  }
+let out = (logged) =>{
+  if(logged){
+    localStorage.clear()
+    window.location.href = "log.html"
+  }else if(!logged){
+    loggedin()
+  }
+}
+const username = localStorage.getItem("username")
+  if(username){
+    document.getElementById("usershow").textContent = `WELCOME TO CF-12 ${username}`
+    logged = true
+  }
+    </script>
+    <!-- The script element includes a local JavaScript file for additional functionality -->
+  </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <title>Online Payment-Page</title>
+    <link rel="stylesheet" href="t.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+</head>
+
+<body>
+    <div class="img"><a href="calc.html"><img src="calc.png"></a></div>
+    <div class="wrap">
+        <div class="img"><img src="Capture.PNG" alt="" srcset=""></div>
+
+        <div class="container">
+    
+            <form action="#">
+    
+                <div class="row">
+    
+                    <div class="col">
+                        <h3 class="title">
+                            Billing Address
+                        </h3>
+    
+                        <div class="inputBox">
+                            <label for="name">
+                                  Full Name:
+                              </label>
+                            <input type="text" id="name" 
+                                   placeholder="Enter your full name" 
+                                   required>
+                        </div>
+    
+                        <div class="inputBox">
+                            <label for="email">
+                                  Email:
+                              </label>
+                            <input type="text" id="email" 
+                                   placeholder="Enter email address" 
+                                   required>
+                        </div>
+    
+                        <div class="inputBox">
+                            <label for="address">
+                                  Address:
+                              </label>
+                            <input type="text" id="address" 
+                                   placeholder="Enter address" 
+                                   required>
+                        </div>
+    
+                        <div class="inputBox">
+                            <label for="city">
+                                  City:
+                              </label>
+                            <input type="text" id="city" 
+                                   placeholder="Enter city" 
+                                   required>
+                        </div>
+    
+                        <div class="flex">
+    
+                            <div class="inputBox">
+                                <label for="state">
+                                      State:
+                                  </label>
+                                <input type="text" id="state" 
+                                       placeholder="Enter state" 
+                                       required>
+                            </div>
+    
+                            <div class="inputBox">
+                                <label for="zip">
+                                      Zip Code:
+                                  </label>
+                                <input type="number" id="zip" 
+                                       placeholder="123 456" 
+                                       required>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="col">
+                        <h3 class="title">Payment</h3>
+    
+                        <div class="card-icons">
+                            <div class="card paypal">
+                                <div class="logo">American Express</div>
+                            </div>
+                            <div class="card visa">
+                                <div class="logo">Visa</div>
+                            </div>
+                            <div class="card mastercard">
+                               <div class="logo">MasterCard</div>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <label for="cardName">
+                                  Name On Card:
+                              </label>
+                            <input type="text" id="cardName" 
+                                   placeholder="Enter card name" 
+                                   required>
+                        </div>
+    
+                        <div class="inputBox">
+                            <label for="cardNum">
+                                  Credit Card Number:
+                              </label>
+                            <input type="text" id="cardNum" 
+                                   placeholder="1111-2222-3333-4444" 
+                                   maxlength="19" required>
+                        </div>
+    
+                        <div class="inputBox">
+                            <label for="">STOCKS:</label>
+                            <select name="" id="">
+                                <option value="">Choose stock</option>
+                                <option value="January">Adani Port</option>
+                                <option value="February">HDFC</option>
+                                <option value="March">SBI</option>
+                                <option value="April">RELIANCE</option>
+                                <option value="May">IRFC</option>
+                                <option value="June">SUNPHARMA</option>
+                                <option value="July">ZEEL</option>
+                                <option value="August">BTC</option>
+                                <option value="September">GOLD</option>
+                                <option value="October">ITC</option>
+                                <option value="November">TCS</option>
+                                <option value="December">APL</option>
+                                <option value="December">OTHERS</option>
+                            </select>
+                        </div>
+                    
+    
+                        <div class="flex">
+                            <div class="inputBox">
+                                <label for="">Exp Year:</label>
+                                <select name="" id="">
+                                    <option value="">Choose Year</option>
+                                    <option value="2023">2025</option>
+                                    <option value="2024">2026</option>
+                                    <option value="2025">2027</option>
+                                    <option value="2026">2028</option>
+                                    <option value="2027">2029</option>
+                                </select>
+                            </div>
+    
+                            <div class="inputBox">
+                                <label for="cvv">CVV</label>
+                                <input type="number" id="cvv" 
+                                       placeholder="123" required>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            <input type="button" value="Proceed to Checkout" 
+                       class="submit_btn" onclick="fun()">
+            </form>
+    
+        </div>
+    </div>
+    <script>
+        let fun = () => {
+            Swal.fire({
+        title: "Success",
+        icon: "success",
+        text: "payment confirmed!",
+        showCancelButton: true,
+        cancelButtonText : "home",
+        confirmButtonText: "back"
+
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "t.html"; // Redirect to create account page
+        } else if(result.dismiss === Swal.DismissReason.cancel){
+            window.location.href = "homepage.html"
+        }
+      })
+        }
+    </script>
+   
+</body>
+
+</html> 

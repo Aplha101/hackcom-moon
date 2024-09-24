@@ -12,11 +12,11 @@
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="log.css" type="text/css" media="all" />
   <title></title>
@@ -43,69 +43,81 @@
   </div>
 
   <script>
+document.getElementById('sheetdb-form').addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    let fun = () => {
-      e = document.getElementById("email")
-      p = document.getElementById("pass")
-      axios.get('https://sheetdb.io/api/v1/0g3c6zo9gmc79').then(response => {
-        console.warn("Response Status :" + response.status)
-        console.log(response.data)
-        dat = response.data
-        for (let i = 0; i <= dat.length; i++) {
-          if (e.value === dat[i].Email && p.value === dat[i].Password) {
-            localStorage.setItem("username" , dat[i].Username)
-            localStorage.setItem("useremail" , dat[i].Email)
-            Swal.fire(
-              "Logged in!",
-              `Welcome ${dat[i].Username}!`,
-              "success"
-            ).then((result) => {
-              if (result.isConfirmed) {
-                window.location.href = "home.html"
-              }
-            })
-          }else if(p.value != dat[i].Password && e.value === dat[i].Email){
-            Swal.fire(
-              'Oops..!',
-              "Incorrect password",
-              "error"
-            )
-            p.value = null
+  let form = document.getElementById('sheetdb-form');
+  let formData = new FormData(form);
+
+  let data = {
+    data: {
+      Username: formData.get("data[Username]"),
+      Email: formData.get("data[Email]"),
+      Password: formData.get("data[Password]")
+    }
+  };
+});
+
+let fun = () => {
+  const e = document.getElementById("email");
+  const p = document.getElementById("pass");
+
+  axios.get('https://sheetdb.io/api/v1/xf98mdtc38u8i').then(response => {
+    console.warn("Response Status: " + response.status);
+    console.log(response.data);
+    const dat = response.data;
+
+    let userFound = false; // To track if the user is found
+
+    for (let i = 0; i < dat.length; i++) { // Fix: Changed 'i <= dat.length' to 'i < dat.length'
+      if (e.value === dat[i].Email && p.value === dat[i].Password) {
+        // User found, set in localStorage
+        localStorage.setItem("username", dat[i].Username);
+        localStorage.setItem("useremail", dat[i].Email);
+        localStorage.setItem("logged", true);
+
+        Swal.fire(
+          "Logged in!",
+          `Welcome ${dat[i].Username}!`,
+          "success"
+        ).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "homepage.html"; // Navigate to homepage
           }
-          else if(e.value != dat[i].Email) {
-            Swal.fire({
-              title: "User not found!",
-              icon:"info",
-              text:"Don't have an account? create one!",
-              confirmButtonText: "Sign-In",
-            }).then((result) => {
-              if (result.isConfirmed) {
-                window.location.href = "create.html"
-              }
-            });
-            p.value = null
-            e.value = null
-          }
-        }
-      })
+        });
+
+        userFound = true;
+        break; // Stop the loop once user is found
+      } else if (e.value === dat[i].Email && p.value !== dat[i].Password) {
+        // Incorrect password case
+        Swal.fire(
+          'Oops..!',
+          "Incorrect password",
+          "error"
+        );
+        p.value = null;
+        userFound = true;
+        break; // Stop loop since the email is correct but password is wrong
+      }
     }
 
-
-    document.getElementById('sheetdb-form').addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      let form = document.getElementById('sheetdb-form');
-      let formData = new FormData(form);
-
-      let data = {
-        data: {
-          Username: formData.get("data[Username]"),
-          Email: formData.get("data[Email]"),
-          Password: formData.get("data[Password]")
+    // If no user is found after the loop
+    if (!userFound) {
+      Swal.fire({
+        title: "User not found!",
+        icon: "info",
+        text: "Don't have an account? create one!",
+        confirmButtonText: "Sign-In",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "create.html"; // Redirect to create account page
         }
-      };
-
-    })
+      });
+      p.value = null;
+      e.value = null;
+    }
+  });
+};
 
   </script>
 </body>

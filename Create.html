@@ -29,13 +29,13 @@
       <p class="or"><span>or</span></p>
 
       <div class="email-login">
-        <form method="POST" action="https://sheetdb.io/api/v1/0g3c6zo9gmc79" id="sheetdb-form" class="sheetdb-form">
+        <form method="POST"  id="sheetdb-form" class="sheetdb-form">
         <lable for="username">Username</lable>
         <input type="text" placeholder="Enter Username" name="data[Username]" id="user" required minlength="5" maxlength="15">
          <label for="email">Email</label>
          <input type="email" placeholder="Enter Email" name="data[Email]" id = "email" >
          <label for="Password">Password</label>
-         <input type="password" placeholder="Enter Password" oninput="fun()" id="pass" name="data[Password]" required minlength="8" maxlength="16">
+         <input type="password" placeholder="Enter Password" ="fun()" id="pass" name="data[Password]" required minlength="8" maxlength="16">
       </div>
       <button class="btn btn-primary"  style="width:100%;  height:50px;">Create Account</button>
       <br>
@@ -48,7 +48,7 @@
     e = document.getElementById("email")
     u = document.getElementById("user")
     p = document.getElementById("pass")
-     axios.get('https://sheetdb.io/api/v1/0g3c6zo9gmc79').then(response=>{
+     axios.get('https://sheetdb.io/api/v1/xf98mdtc38u8i').then(response=>{
     console.warn("Response Status :"+ response.status)
     let a = response.data
     console.log(a)
@@ -63,7 +63,6 @@
           u.value = null
           e.value = null
           p.value = null
-
         }
       }
   })
@@ -83,18 +82,19 @@
         }
     };
     console.log(data.data.Email)
-    axios.post('https://sheetdb.io/api/v1/0g3c6zo9gmc79', data)
+    axios.post('https://sheetdb.io/api/v1/xf98mdtc38u8i', data)
         .then(function (response) {
             if (response.status === 201) {
               localStorage.setItem("username" , data.data.Username)
-            localStorage.setItem("useremail" , data.data.Email)
+              localStorage.setItem("useremail" , data.data.Email)
+              localStorage.setItem("logged" , true)
                 Swal.fire(
               "Account created!",
               `Welcome ${data.data.Username}!`,
               "success"
             ).then((result) => {
               if (result.isConfirmed) {
-                window.location.href = "home.html"
+                window.location.href = "homepage.html"
               }
             })
             }
