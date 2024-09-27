@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "montserrat";
-  color: #fff;
+  color:  #fff;
   cursor: none;
 }
 
@@ -28,9 +30,7 @@ body::-webkit-scrollbar-thumb {
 
   border-radius: 50px;
 }
-body {
-  overflow-x: hidden;
-}
+
 #cursor {
   height: 20px;
   width: 20px;
@@ -41,9 +41,9 @@ body {
   transition: all linear 0.1s;
 }
 #cursor-blur {
-  height: 500px;
-  width: 500px;
-  background-color: rgba(150, 193, 30, 0.3);
+  height: 200px;
+  width: 200px;
+  background-color: rgba(199, 255, 46, 0.3);
   border-radius: 50%;
   position: fixed;
   filter: blur(80px);
@@ -59,17 +59,104 @@ body {
   padding: 0 120px;
   gap: 50px;
   position: fixed;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: space-between;
+  
   z-index: 999;
 }
 #nav img {
   height: 4.5vw;
+}
+a{
+  text-decoration: none;
+  color: #fff;
 }
 #nav h4 {
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
   font-size: 1.15vw;
+display: flex;
+justify-content: space-between;
+}
+#nav .btn {
+  display: flex;
+  justify-content: space-between;
+  height: 12px;
+  padding-left: 582px;
+  top: auto;
+  gap: 20px;
+  z-index: -1;
+
+}
+#nav{
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 30px 0;
+  font-family: 'Ubuntu', sans-serif;
+  transition: all 0.3s ease;
+}
+button{
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.342);
+}
+#nav.sticky{
+  padding: 15px 0;
+  background: crimson;
+}
+#nav .max-width{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#nav .logo a{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+#nav .logo a span{
+  color: rgb(242, 15, 227);
+  transition: all 0.3s ease;
+}
+#nav.sticky .logo a span{
+  color: #fff;
+}
+#nav .menu li{
+  list-style: none;
+  display: inline-block;
+}
+#nav .menu li a{
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+#nav .menu li a:hover{
+  color: crimson;
+}
+#nav.sticky .menu li a:hover{
+  color: #fff;
+}
+#nav .btn button{
+  color: rgb(0, 0, 0) ;
+  background-color: crimson;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  border-radius: 5px;
+  height: 25px;
+  right : 10%;
+  resize: both;
+  filter: drop-shadow(10px);
+}
+.menu-btn{
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
 }
 video {
   height: 100%;
@@ -133,6 +220,7 @@ video {
   justify-content: center;
   border-radius: 50%;
   transition: all ease 0.5s;
+  display:  none;
 }
 #page1 #arrow i {
   font-size: 50px;
@@ -163,12 +251,12 @@ video {
   display: inline-block;
   white-space: nowrap;
   animation-name: scroll;
-  animation-duration: 40s;
+  animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
-#scroller h4 {
+#scroller h3 {
   display: inline-block;
   font-size: 120px;
   font-weight: 900;
@@ -178,7 +266,7 @@ video {
   color: #000;
   -webkit-text-stroke: 2px #ffffff;
 }
-#scroller h4:hover {
+#scroller h3:hover {
   color: #95c11e;
   -webkit-text-stroke: 2px #95c11e;
 }

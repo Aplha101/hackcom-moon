@@ -110,5 +110,15 @@ gsap.from("#page4 h1", {
     scrub: 3,
   },
 });
+$(document).ready(function(){
+     $('#nav .menu li a').click(function(){
+       // applying again smooth scroll on menu items click
+     $('html').css("scrollBehavior", "smooth");
+   });
 
-// Thanks itna aage tak aane ke liye lekin pura code utha ke copy paste karne ki jagah khud ek baar banane ka try karna, kuch naya seekhne ko milega!
+ // toggle menu/navbar script
+ $('.menu-btn').click(function(){
+   $('#nav .menu').toggleClass("active");
+   $('.menu-btn i').toggleClass("active");
+ });
+})

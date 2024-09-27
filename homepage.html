@@ -19,9 +19,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
      
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -34,25 +34,37 @@
     <!-- The link element with rel="stylesheet" specifies an external CSS file for styling -->
     <link rel="stylesheet" href="homepage.css" />
     <!-- This link element includes a local CSS file for additional styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
   </head>
 
   <body>
     <!-- The body element contains the content of the HTML document -->
     <div id="nav">
       <!-- The div element with id="nav" represents the navigation bar -->
-      <img
+      <!-- <img
         src="https:/ /eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg"
         alt="logo"
-      />
+      /> -->
       <!-- The img element displays an image, with the src attribute specifying the image URL -->
       <!-- The h4 element represents a heading -->
-      <a href="stock.html"><h4>Stocks</h4></a>
-      <a href="t.html"><h4>TRANSACTION</h4></a>
-      <h4>UPDATES</h4>
-      <a href="about.html"><h4>TEAMS</h4></a>    
+   
+      <a href="stock.html"><h4>Stocks</a></h4>
+      <a href="t.html"><h4>TRANSACTION</a></h4>
+      <a href="graph.html"><h4>UPDATES</a></h4>
+      <a href="about.html"><h4>TEAMS</a></h4>
+      <button onclick="out(logged)" style="height:30px;">LOG-OUT</button>
       
-      <button class="btn btn-danger" onclick="out(logged)" style="height:50px;">Log-out</button>  
+      <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </div> 
     </div>
+    
+    
     <div id="cursor"></div>
     <!-- The div element with id="cursor" represents a custom cursor -->
     <div id="cursor-blur"></div>
@@ -74,12 +86,10 @@
         <!-- The h1 element represents the main heading -->
         <h2 id="usershow"></h2>
         <!-- The h2 element represents a subheading -->
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic omnis qui eveniet, accusamus quas mollitia? Perspiciatis atque expedita commodi ratione, incidunt cumque blanditiis?
-        </p>
+        
         <!-- The p element represents a paragraph of text -->
         <div id="arrow">
-          <i class="ri-arrow-down-line"></i>
+          
           <!-- The i element with a class represents an icon -->
         </div>
       </div>
@@ -88,19 +98,19 @@
         <div id="scroller">
           <!-- The div element with id="scroller" represents a scrolling container -->
           <div id="scroller-in">
-            <a href="stock.html"></a><h4>STOCKS</h4>
-            <a href="t.html"><h4>TRANSACTION</h4></a>
-            <a href="graph.html"><h4>UPDATES</h4></a>
+            <a href="stock.html"></a><h3>STOCKS</h3>
+            <a href="t.html"><h3>TRANSACTION</h3></a>
+            <a href="graph.html"><h3>UPDATES</h3></a>
             
           </div>
           <div id="scroller-in">
-            <a href="stock.html"></a><h4>STOCKS</h4>
-            <a href="t.html"><h4>TRANSACTION</h4></a>
-            <a href="graph.html"><h4>UPDATES</h4></a>
+            <a href="stock.html"></a><h3>STOCKS</h3>
+            <a href="t.html"><h3>TRANSACTION</h3></a>
+            <a href="graph.html"><h3>UPDATES</h3></a>
           </div>
         </div>
-        <div id="about-us">
-          <!-- The div element with id="about-us" represents the about us section -->
+        <!-- <div id="about-us">
+           The div element with id="about-us" represents the about us section 
           <img
             src="https://eiwgew2 7fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
             alt="img"
@@ -115,9 +125,9 @@
             src="https://eiwgew27fhz .exactdn.com/wp-content/uploads/2023/02/home-about-2-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
             alt="img"
           />
-        </div>
+        </div> -->
         
-        <div id="green-div">
+        <!-- <div id="green-div">
           <img
             src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
             alt=""
@@ -129,10 +139,10 @@
             src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
             alt=""
           />
-        </div>
+        </div> -->
       </div>
-      <div id="page3">
-        <!-- The div element with id="page3" represents the third page section -->
+      <!-- <div id="page3">
+         The div element with id="page3" represents the third page section 
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eligendi vel delectus cumque. Optio ducimus, pariatur incidunt aliquam beatae tenetur consequatur, qui necessitatibus ab odit sunt aspernatur ratione, iusto quaerat modi! Assumenda magnam tempore repudiandae ratione exercitationem, maiores qui voluptates ipsa, consequatur iusto neque vero.
         </p>
@@ -146,55 +156,33 @@
           src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
           alt=""
         />
-      </div>
+      </div> -->
       <div id="page4">
         <!-- The div element with id="page4" represents the fourth page section -->
         <h1>WHAT ARE YOU WAITING FOR?</h1>
         <div class="elem">
           <h2>UPDATES</h2>
           <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-toptracer-1024x683.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+            src="https://img.freepik.com/premium-photo/stock-market-forex-trading-graph-graphic-concept_73426-102.jpg"
             alt=""
           />
         </div>
         <div class="elem">
           <h2>TRANSACTION</h2>
           <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-lessons-1024x683.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUE2fe6rK4ibJy35LEjtSUBMZLu_Eau2ahFQ&s"
             alt=""
           />
         </div>
         <div class="elem">
           <H2>STOCKS</H2>
           <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-ag-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+            src="https://www.bankrate.com/2019/03/22142110/How-to-trade-stocks.jpg?auto=webp&optimize=high&crop=16:9"
             alt=""
           />
         </div>
       </div>
-      <div id="footer">
-        <!-- The div element with id="footer" represents the footer section -->
-        <img
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg"
-          alt=""
-        />
-        <div id="f1">
-          <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/log  o-white.svg"
-            alt="img"
-          />
-        </div>
-        <div id="f2">
-          <h3>STOCKS</h3>
-          <h3>TRADE</h3>
-          <h3>BUY & SELL</h3>
-        </div>
-        <div id="f3">
-          <h3>CONTACT US</h3>
-          <h3>TEAMS</h3>
-        </div>
-        <
-      </div>
+      
     </div>
 
     <script
@@ -238,7 +226,7 @@ let out = (logged) =>{
 }
 const username = localStorage.getItem("username")
   if(username){
-    document.getElementById("usershow").textContent = `WELCOME TO CF-12 ${username}`
+    document.getElementById("usershow").textContent = `WELCOME TO CF-12`
     logged = true
   }
     </script>
